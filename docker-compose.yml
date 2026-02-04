@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  ontologyops:
+    build: .
+    ports:
+      - "9090:9090"
+    environment:
+      - TRIPLE_STORE_URL=http://graphdb:7200
+      - PROMETHEUS_PORT=9090
+    depends_on:
+      - graphdb
+    volumes:
+      - ./config:/app/config
+      - ./ontologies:/app/ontologies
+
+  graphdb:
+    image: ontotext/graphdb:10.0.0
+    ports:
+      - "7200:7200"
+    volumes:
+      - graphdb-data:/opt/graphdb/home
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./config/prometheus-config.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./config/grafana-dashboard.json:/etc/grafana/provisioning/dashboards/ontologyops.json
+
+volumes:
+  graphdb-data:
+  prometheus-data:
+  grafana-data:

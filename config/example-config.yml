@@ -1,0 +1,12 @@
+version_control:
+  storage_path: ".ontologyops/versions"
+  hash_algorithm: "sha256"
+
+deployment:
+  triple_store_url: "http://localhost:7200"
+  timeout: 30
+  backup_before_deploy: true
+
+monitoring:
+  prometheus_port: 9090
+  health_check_interval: 60

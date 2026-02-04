@@ -1,0 +1,67 @@
+site_name: OntologyOps Documentation
+site_description: Production-grade infrastructure for AI agent ontology version control, testing, and deployment
+site_author: Pankaj Kumar
+repo_name: cloudbadal007/ontologyops
+repo_url: https://github.com/cloudbadal007/ontologyops
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+          options:
+            docstring_style: google
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: installation.md
+    - Quick Start: getting-started.md
+  - User Guide:
+    - Version Control: user-guide/version-control.md
+    - Testing: user-guide/testing.md
+    - Deployment: user-guide/deployment.md
+    - Monitoring: user-guide/monitoring.md
+  - API Reference:
+    - Version Control: api-reference/version-control-api.md
+    - Testing: api-reference/testing-api.md
+    - Deployment: api-reference/deployment-api.md
+    - Monitoring: api-reference/monitoring-api.md
+  - Tutorials:
+    - First Deployment: tutorials/your-first-deployment.md
+    - CI/CD Setup: tutorials/cicd-setup.md
+    - Advanced Testing: tutorials/advanced-testing.md
+  - Contributing: contributing.md
+  - Architecture: architecture.md
+  - Changelog: changelog.md
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - admonition
+  - tables

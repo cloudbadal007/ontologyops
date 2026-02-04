@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/supplychain#"
+     xml:base="http://example.org/supplychain"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://example.org/supplychain"/>
+    <owl:Class rdf:about="http://example.org/supplychain#Shipment">
+        <rdfs:label>Shipment</rdfs:label>
+        <rdfs:comment>A shipment in the supply chain</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://example.org/supplychain#Supplier">
+        <rdfs:label>Supplier</rdfs:label>
+        <rdfs:comment>A supplier entity</rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="http://example.org/supplychain#Subscription">
+        <rdfs:label>Subscription</rdfs:label>
+        <rdfs:comment>A subscription entity</rdfs:comment>
+    </owl:Class>
+    <owl:ObjectProperty rdf:about="http://example.org/supplychain#supplies">
+        <rdfs:label>supplies</rdfs:label>
+        <rdfs:comment>Supplier supplies product</rdfs:comment>
+    </owl:ObjectProperty>
+</rdf:RDF>

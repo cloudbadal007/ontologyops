@@ -1,0 +1,22 @@
+{
+  "dashboard": {
+    "title": "OntologyOps",
+    "panels": [
+      {
+        "title": "Entity Count",
+        "type": "stat",
+        "targets": [{"expr": "entity_count"}]
+      },
+      {
+        "title": "Deployments",
+        "type": "stat",
+        "targets": [{"expr": "deployment_success_total"}]
+      },
+      {
+        "title": "Query Duration",
+        "type": "graph",
+        "targets": [{"expr": "rate(ontology_query_duration_seconds_sum[5m])"}]
+      }
+    ]
+  }
+}
