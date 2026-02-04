@@ -25,7 +25,6 @@ Thank you to all our individual sponsors!
 Support OntologyOps development:
 
 - [GitHub Sponsors](https://github.com/sponsors/cloudbadal007)
-- [Buy Me a Coffee](https://buymeacoffee.com/cloudpankaj)
 
 ### Why Sponsor?
 
